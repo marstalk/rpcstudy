@@ -1,9 +1,8 @@
-package com.marstalk.rpcstudy.protocol.http;
+package com.marstalk.mrpc.protocol.http;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
-import org.springframework.boot.autoconfigure.web.ServerProperties;
 
 import java.io.File;
 

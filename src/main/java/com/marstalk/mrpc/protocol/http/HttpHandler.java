@@ -1,7 +1,7 @@
-package com.marstalk.rpcstudy.protocol.http;
+package com.marstalk.mrpc.protocol.http;
 
-import com.marstalk.rpcstudy.core.Invocation;
-import com.marstalk.rpcstudy.register.LocalRegister;
+import com.marstalk.mrpc.core.Invocation;
+import com.marstalk.mrpc.register.LocalRegister;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

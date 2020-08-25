@@ -1,6 +1,6 @@
-package com.marstalk.rpcstudy.protocol.http;
+package com.marstalk.mrpc.protocol.http;
 
-import com.marstalk.rpcstudy.core.Invocation;
+import com.marstalk.mrpc.core.Invocation;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,14 +10,16 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 
 public class HttpClient {
     public Object send(String host, int port, Invocation invocation){
         try {
-            URL url = new URL("http", host, port, new File(".").getAbsolutePath());
+            URL url = new URL("http", host, port, new File("").getPath());
             HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+            urlConnection.setDoOutput(true);
+            urlConnection.setDoInput(true);
             OutputStream outputStream = urlConnection.getOutputStream();
+
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
             objectOutputStream.writeObject(invocation);
             objectOutputStream.flush();

@@ -1,6 +1,8 @@
-package com.marstalk.rpcstudy.core;
+package com.marstalk.mrpc.core;
 
-public class Invocation {
+import java.io.Serializable;
+
+public class Invocation implements Serializable {
     private String serviceName;
     private String methodName;
     private Class[] paramTypes;

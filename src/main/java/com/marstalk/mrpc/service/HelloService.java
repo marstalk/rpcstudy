@@ -1,4 +1,4 @@
-package com.marstalk.rpcstudy.service;
+package com.marstalk.mrpc.service;
 
 /**
  * @author jiacheng524@live.cn

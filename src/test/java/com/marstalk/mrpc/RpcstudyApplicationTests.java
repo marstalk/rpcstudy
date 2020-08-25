@@ -1,4 +1,4 @@
-package com.marstalk.rpcstudy;
+package com.marstalk.mrpc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

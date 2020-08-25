@@ -1,6 +1,6 @@
-package com.marstalk.rpcstudy.protocol.http;
+package com.marstalk.mrpc.protocol.http;
 
-import com.marstalk.rpcstudy.core.Invocation;
+import com.marstalk.mrpc.core.Invocation;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
@@ -19,7 +19,8 @@ public class DispatcherServlet extends HttpServlet {
         ServletInputStream inputStream = req.getInputStream();
         ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
         try {
-            Object result = handler.handle((Invocation) objectInputStream.readObject());
+            Invocation invocation = (Invocation) objectInputStream.readObject();
+            Object result = handler.handle(invocation);
             ServletOutputStream outputStream = resp.getOutputStream();
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
             objectOutputStream.writeObject(result);
@@ -33,6 +34,6 @@ public class DispatcherServlet extends HttpServlet {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        super.service(req, resp);
+//        super.service(req, resp);
     }
 }
